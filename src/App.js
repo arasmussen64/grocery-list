@@ -3,7 +3,11 @@ import List from './components/items/List';
 import ItemForm from './components/items/ItemForm';
 
 class App extends Component {
-  state = { items: [] }
+  state = { items: [ {name: 'Apple', price: '$2.50', complete: false},
+  {name: 'Orange', price: '$2.00', complete: false},
+  {name: 'Ice Cream', price: '$3.00', complete: false},
+] 
+};
   
 getUniqId = () => {
 return Math.floor((1 + Math.random())*0x10000)
@@ -11,9 +15,9 @@ return Math.floor((1 + Math.random())*0x10000)
   .substring(1);
 }
 
-addItem = (name) => {
+addItem = (incomingItem) => {
   const { items } = this.state;
-  const item = { name, id: this.getUniqId(), complete: false }
+  const item = { ...incomingItem, id: this.getUniqId(), complete: false }
   this.setState({ items: [item, ...items] });
 }
 
@@ -37,7 +41,7 @@ addItem = (name) => {
     return(
       <div>
         <ItemForm addItem={this.addItem} />
-        <List name="Grocery List" items={items} itemClick={this.handleClick}/>
+        <List name="Grocery List" items={this.state.items} itemClick={this.handleClick}/>
       </div>
     );
   }
