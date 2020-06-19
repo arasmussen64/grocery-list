@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import List from './components/items/List';
+import ItemForm from './components/items/ItemForm';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = { items: [
+    { id: 1, name: 'Apple', complete: false },
+    { id: 2, name: 'Fish', complete: false },
+    { id: 3, name: 'Yogurt', complete: false },
+  ]
+};
+
+  render() {
+    const { items } = this.state;
+    return(
+      <div>
+        <ItemForm />
+        <List name="Grocery List" items={items} />
+      </div>
+    );
+  }
 }
 
 export default App;
