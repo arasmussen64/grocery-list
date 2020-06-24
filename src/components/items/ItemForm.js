@@ -23,27 +23,34 @@ class ItemForm extends Component {
     render() {
         const { name, price } = this.state;
         return (
-            <Form onSubmit={this.handleSubmit}>
-               <Form.Input 
-                value={name}
-                name="name"
-                onChange={this.handleChange}
-                required 
-                placeholder="Add An Item" 
-                />
-                <Form.Input 
-                value={price}
-                name="price"
-                onChange={this.handleChange}
-                required 
-                placeholder="Cost"
-                />
-                <Form.Button>Submit</Form.Button>
+          <Form onSubmit={this.handleSubmit}>
+               <Form.Group width={12}>
+                  <Form.Input 
+                    value={name}
+                    name="name"
+                    onChange={this.handleChange}
+                    required 
+                    placeholder="Add An Item" 
+                  />
+                  <Form.Input 
+                  value={price}
+                  name="price"
+                  onChange={this.handleChange}
+                  required 
+                  placeholder="Cost"
+                  />
+                </Form.Group>
+                <Form.Button color='green'>Submit</Form.Button>
             </Form>
         )
     }
 }
 
 
+
+// labelPosition='right' type='text' placeholder='Amount'>
+//     <Label basic>$</Label>
+//     <input />
+//     <Label>.00</Label>
 
 export default ItemForm;

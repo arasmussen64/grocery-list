@@ -6,7 +6,7 @@ const Item = ({ id, name, price, complete, itemClick }) => (
         style={ complete ? { ...styles.item, ...styles.complete } : styles.item }
         onClick={ () => itemClick(id) }
         >
-        { name } { price }
+        { name }  { price }
 
     </li>
 );
