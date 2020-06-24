@@ -3,9 +3,9 @@ import List from './components/items/List';
 import ItemForm from './components/items/ItemForm';
 
 class App extends Component {
-  state = { items: [ {name: 'Apple', price: '$2.50', complete: false},
-  {name: 'Orange', price: '$2.00', complete: false},
-  {name: 'Ice Cream', price: '$3.00', complete: false},
+  state = { items: [ {id: 1, name: 'Apple', price: '$2.50', complete: false},
+  {id: 2, name: 'Orange', price: '$2.00', complete: false},
+  {id: 3, name: 'Ice Cream', price: '$3.00', complete: false},
 ] 
 };
   
